@@ -1,0 +1,121 @@
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background: #fff;
+}
+
+/* Screen Styles */
+.screen {
+  display: none; /* Initially hide all screens */
+  flex-direction: column;
+  justify-content: space-between; /* Space out banner, content, and footer */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100vh; /* Full viewport height */
+}
+
+.top-banner {
+  background-color: #f8f8f8;
+  color: #4CAF50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  /* Assuming you're using font icons, replace 'icon-class' with your actual icon classes */
+  /* Example: font-family: 'Font Awesome 5 Free'; content: '\f004'; for heart icon */
+}
+
+.icon-button.heart::before {
+  /* content for heart icon */
+}
+
+.icon-button.bell::before {
+  /* content for bell icon */
+}
+
+/* Content Styles */
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-code {
+  width: 200px; /* Set based on your design needs */
+  height: auto;
+  margin: 20px 0; /* Space above and below QR code */
+}
+
+.scan-text {
+  font-weight: bold;
+  background-color: #e7e7e7; /* Light grey background */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px; /* Space above the SOS button */
+}
+
+/* SOS Button Styles */
+.btn-sos {
+  background-color: #FF0000; /* Red color for SOS */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Circular button */
+  padding: 15px;
+  font-size: 20px;
+  margin-bottom: 20px; /* Space from the bottom of the screen */
+  cursor: pointer;
+  width: 60px; /* Fixed width */
+  height: 60px; /* Fixed height */
+  line-height: 60px; /* Center text vertically */
+  display: inline-block; /* Allows width and height */
+}
+
+/* Footer Navigation Styles */
+.footer-nav {
+  /* Footer styles */
+  padding: 10px 0;
+}
+
+.footer-nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  /* Icon styles */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .top-banner {
+    padding: 5px;
+  }
+
+  .icon-button {
+    padding: 5px;
+  }
+
+  .qr-code {
+    width: 150px; /* Smaller QR code for small screens */
+  }
+
+  .btn-sos {
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+}

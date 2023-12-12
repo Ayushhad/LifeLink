@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeLink App Screens</title>
+  <style>
+    .app-container {
+      max-width: 375px; /* typical width of a mobile phone */
+      margin: 0 auto; /* center the container */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* optional: adds a shadow for better visualization */
+      overflow: hidden; /* ensures content does not overflow */
+    }
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .screen {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    .top-banner {
+      background-color: #f8f8f8;
+      padding: 20px;
+      font-size: 24px;
+      color: black;
+    }
+    .content h1 {
+      margin: 20px 0;
+    }
+    .footer-nav {
+      padding: 20px;
+    }
+    button {
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .show {
+      display: flex;
+      flex-direction: column;
+    }
+    /* Add your other styles here */
+  </style>
+</head>
+<body>
+
+<div id="screen1" class="screen show">
+  <header class="top-banner">
+    <p>lifelink.</p>
+  </header>
+  <main class="content">
+    <h1>Keep Safety at your Fingertips</h1>
+    <img src="lifelinklogo.PNG" alt="LifeLink Logo" style="max-width:100%; height:auto;" />
+    <h2>Let’s get started!</h2>
+    <p>Experience peace of mind on your journeys with LifeLink, your trusted companion for safe traveling.</p>
+    <button onclick="showScreen(2)">Next</button>
+  </main>
+  <footer class="footer-nav">
+    <!-- Pagination dots here -->
+  </footer>
+</div>
+
+<div id="screen2" class="screen">
+  <header class="top-banner">
+    <p>lifelink.</p>
+  </header>
+  <main class="content">
+    <h1>Keep Safety at your Fingertips</h1>
+    <img src="familyimagescreen2.PNG" alt="Family Safety" style="max-width:100%; height:auto;" />
+    <h2>More than just a safety app</h2>
+    <p>Lifelink ensures that onlookers can call your loved ones in times of distress.</p>
+    <button onclick="showScreen(3)">Next</button>
+  </main>
+  <footer class="footer-nav">
+    <!-- Pagination dots here -->
+  </footer>
+</div>
+
+<div id="screen3" class="screen">
+  <header class="top-banner">
+    <p>lifelink.</p>
+  </header>
+  <main class="content">
+    <h1>Keep Safety at your Fingertips</h1>
+    <img src="locationcar.PNG" alt="Hospital Location" style="max-width:100%; height:auto;" />
+    <h2>Can’t find nearest hospital?</h2>
+    <p>We’ve got you! Saving your life's most crucial seconds</p>
+    <button onclick="showScreen(4)">Get Started</button>
+  </main>
+  <footer class="footer-nav">
+    <!-- Pagination dots here -->
+  </footer>
+</div>
+
+<div id="screen4" class="screen">
+  <header class="top-banner">
+    <p>lifelink.</p>
+  </header>
+  <main class="content">
+  <h1>Let’s sign you up!</h1>
+  <p>Welcome! Please sign up to get started</p>
+  <div class="image-container">
+    <img src="signup.PNG" alt="Sign Up Illustration" />
+  </div>
+  <input type="text" placeholder="Enter Aadhar/AABHA number" />
+  <button onclick="showScreen(5)">Get OTP</button>
+  <!-- Add other content as needed -->
+</main>
+<footer class="footer-nav">
+  <!-- Pagination dots here -->
+</footer>
+</div>
+
+<div id="screen5" class="screen">
+  <header class="top-banner">
+    <p>lifelink.</p>
+  </header>
+  <main class="content">
+    <h1>Let’s sign you up!</h1>
+    <p>Welcome! Please sign up to get started</p>
+    <div class="otp-message">
+      <p>An OTP has been sent to your registered mobile number <span class="checkmark">✓</span></p>
+    </div>
+    <div class="image-container">
+      <!-- Replace 'illustration.png' with the path to your actual image -->
+      <img src="illustration.png" alt="Sign Up Illustration" />
+    </div>
+    <div class="input-container">
+      <input type="text" placeholder="Enter OTP" />
+      <span class="input-checkmark">✓</span>
+    </div>
+    <button class="btn-get-started" onclick="showScreen(6)">Get started</button>
+    <button class="btn-resend-otp" onclick="showScreen(5)">Resend OTP</button>
+  </main>
+  <footer class="footer-nav">
+    <!-- Pagination dots here -->
+  </footer>
+</div>
+
+
+<div id="screen6" class="screen">
+  <header class="top-banner">
+    <p>lifelink.</p>
+  </header>
+  <main class="content">
+    <h1>Let’s sign you up!</h1>
+    <p>Please enter the details to get started</p>
+    <form id="signup-form" onsubmit="handleSignUpSubmit(event)">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="dob" placeholder="Date of Birth(DD-MM-YYYY)" required />
+      <input type="tel" name="mobile" placeholder="Mob no." required />
+      <input type="text" name="address" placeholder="Address" required />
+      <input type="text" name="bloodGroup" placeholder="Blood Group" required />
+      <div class="gender-selection">
+        <label><input type="radio" name="gender" value="male" /> Male</label>
+        <label><input type="radio" name="gender" value="female" /> Female</label>
+        <label><input type="radio" name="gender" value="non-binary" /> Non-Binary</label>
+        <label><input type="radio" name="gender" value="prefer-not-to-say" /> Prefer not to say</label>
+      </div>
+      <button type="button" class="btn-next" onclick="showScreen(7)">Next</button>
+    </form>
+  </main>
+  <footer class="footer-nav">
+    <!-- Pagination dots here -->
+  </footer>
+</div>
+
+<div id="screen7" class="screen">
+  <header class="top-banner">
+    <p>lifelink.</p>
+  </header>
+  <main class="content">
+    <h2>Emergency Contact Information</h2>
+    <form id="emergency-contact-form">
+      <input type="text" id="guardianName" name="name" placeholder="Enter Name Of Guardian 1" required />
+      <input type="tel" id="guardianPhone" name="phone" placeholder="Enter Mobile Number of Guardian 1" required />
+      <input type="text" id="guardianRelationship" name="relationship" placeholder="Enter Relationship with Guardian 1" required />
+      <button type="button" class="btn-next" onclick="showScreen(8)">Done</button>
+    </form>
+  </main>
+</div>
+
+<script>
+  var contacts = []; // This will hold the contact information
+
+  function handleSignUpSubmit(event) {
+    event.preventDefault();
+    var formData = new FormData(event.target);
+    var contact = {};
+    formData.forEach(function(value, key){
+      contact[key] = value;
+    });
+    contacts.push(contact);
+    console.log(contacts);
+    showScreen(8); // Move to screen 7 after form submission
+  }
+
+  function showScreen(screenNumber) {
+    var screens = document.getElementsByClassName('screen');
+    for (var i = 0; i < screens.length; i++) {
+      screens[i].style.display = 'none';
+    }
+    document.getElementById('screen' + screenNumber).style.display = 'flex';
+  }
+
+  // Emergency contact form submission handling
+  document.getElementById('emergency-contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Similar data handling as in handleSignUpSubmit
+  });
+
+</script>
+<div id="screen8" class="screen">
+  <header class="top-banner">
+    <h1>lifelink.</h1>
+  </header>
+  <nav class="taskbar">
+    <button onclick="handleProfileClick()" class="taskbar-button">Profile</button>
+    <button onclick="handleUploadClick()" class="taskbar-button">Upload Documents</button>
+    <button onclick="handleConsentClick()" class="taskbar-button">Consent Management</button>
+  </nav>
+  <main class="content">
+    <img src="qr.png" alt="QR Code" class="qr-code" />
+    <p class="scan-text">SCAN QR CODE TO NOTIFY EMERGENCY CONTACTS</p>
+    <button onclick="handleSOSClick()" class="btn-sos">SOS</button>
+  </main>
+  <footer class="footer-nav">
+    <!-- Footer buttons go here -->
+  </footer>
+</div>
+
+
+<script>
+  function handleSOSClick() {
+    alert('Emergency contacts have been notified!');
+  }
+
+  function handleProfileClick() {
+    // Redirect to the desired URL
+    window.location.href = 'profile.html';
+  }
+
+  function handleUploadClick() {
+    // Logic for upload button
+    window.location.href = 'uploadDoc.html';
+  }
+
+  function handleConsentClick() {
+    // Logic for consent button
+    window.location.href = 'consentManagement.html';
+  }
+</script>
+
+<!-- Your existing HTML code here -->
+
+<script>
+  var contacts = []; // This will hold the contact information
+
+  function handleSignUpSubmit(event) {
+    event.preventDefault();
+  var formData = new FormData(event.target);
+  var contact = {};
+  formData.forEach(function (value, key) {
+    contact[key] = value;
+  });
+  contacts.push(contact);
+
+  // Store user details in local storage
+  localStorage.setItem('userName', contact.name);
+  localStorage.setItem('userEmail', contact.email);
+  localStorage.setItem('userDOB', contact.dob);
+  localStorage.setItem('userAddress', contact.address);
+  localStorage.setItem('userBloodGroup', contact.bloodGroup);
+    console.log(contacts);
+    showScreen(8); // Move to screen 8 after form submission
+  }
+
+  function showScreen(screenNumber) {
+    var screens = document.getElementsByClassName('screen');
+    for (var i = 0; i < screens.length; i++) {
+      screens[i].style.display = 'none';
+    }
+    document.getElementById('screen' + screenNumber).style.display = 'flex';
+  }
+
+  // Emergency contact form submission handling
+  document.getElementById('emergency-contact-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    // Similar data handling as in handleSignUpSubmit
+  });
+
+  // Retrieve the user's name from local storage and update the DOM
+  var userName = localStorage.getItem('userName');
+  document.getElementById('userName').innerText = userName;
+</script>
+
+<!-- Rest of your HTML code here -->
+
+
+</script>
+<script>
+  // Your existing code
+
+  function handleEmergencyContactSubmit(event) {
+    event.preventDefault();
+    var formData = new FormData(event.target);
+    var contact = {};
+    formData.forEach(function (value, key) {
+      contact[key] = value;
+    });
+
+    // Store each contact in a separate local variable
+    localStorage.setItem('emergencyContactName', contact.name);
+    localStorage.setItem('emergencyContactPhone', contact.phone);
+    localStorage.setItem('emergencyContactRelationship', contact.relationship);
+
+    // Proceed to the next screen
+    showScreen(8);
+  }
+
+</script>
+
+<!-- Inside the first HTML file, after the emergency contact form submission handling -->
+<script>
+  function handleEmergencyContactSubmit(event) {
+    event.preventDefault();
+    
+    var formData = new FormData(event.target);
+    var contact = {};
+
+    formData.forEach(function (value, key) {
+      contact[key] = value;
+    });
+
+    // Store emergency contact information in local storage
+    localStorage.setItem('emergencyContactName', contact.name);
+    localStorage.setItem('emergencyContactPhone', contact.phone);
+    localStorage.setItem('emergencyContactRelationship', contact.relationship);
+
+    // Proceed to the next screen
+    showScreen(8);
+  }
+</script>
+
+
+</body>
+</html>

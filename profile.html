@@ -1,0 +1,186 @@
+<!-- profile.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    img {
+      max-width: 50px;
+      height: auto;
+      border-radius: 50%;
+      margin-right: 10px; /* Add margin to separate image and username */
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 1em;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 1em;
+    }
+
+    /* New styles for the headings */
+    main h4 {
+      text-align: left;
+      margin-left: 20px; /* Adjust the margin as needed */
+    }
+    main p {
+      text-align: left;
+      margin-left: 20px; /* Adjust the margin as needed */
+    }
+    main h2 {
+      background-color: #3498db; /* Background color */
+      color: white; /* Text color */
+      padding: 8px; /* Padding for better visibility */
+      display: inline-block; /* Make it inline-block to only take the necessary space */
+      border-radius: 5px; /* Add rounded corners */
+    }
+
+    /* New styles for the icons */
+    .icons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px; /* Adjust the margin as needed */
+    }
+
+    .icon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .icon {
+      width: 65px;
+      height: 65px;
+      background-color: #3498db; /* Icon background color */
+      color: white; /* Icon color */
+      border-radius: 50%; /* Make it round */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-number {
+      font-size: 18px; /* Adjust the font size as needed */
+    }
+
+    .icon-heading {
+      margin-top: 5px;
+      font-size: 16px; /* Adjust the font size as needed */
+    }
+
+    /* New styles for the logout icon */
+    .logout-icon {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 50px;
+      background-color: #e74c3c; /* Logout icon background color */
+      color: white; /* Logout icon color */
+      border-radius: 5px; /* Add rounded corners */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="images.jpeg" alt="Profile Image">
+    <h1 id="userName"></h1>
+  </header>
+
+  <main>
+    <!-- New icons and headings -->
+    <div class="icons">
+      <div class="icon-container">
+        <div class="icon">
+          <div class="icon-number">04</div>
+        </div>
+        <div class="icon-heading">Emergency Contacts</div>
+      </div>
+      <div class="icon-container">
+        <div class="icon">
+          <div class="icon-number">02</div>
+        </div>
+        <div class="icon-heading">Vehicle Partners</div>
+      </div>
+    </div>
+
+    <!-- New heading for Personal Information -->
+    <h2>Personal Information</h2>
+
+    <!-- Retrieve the user's name from local storage -->
+    <h4>Email: <span id="userEmail"></span></h4>
+    <p>Date of Birth: <span id="userDOB"></span></p>
+    <p>Address: <span id="userAddress"></span></p>
+    <p>Blood Group: <span id="userBloodGroup"></span></p>
+
+    <!-- Add your existing content here -->
+  </main>
+
+  <!-- Logout icon -->
+  <div class="logout-icon" onclick="handleLogout()">
+    Logout
+  </div>
+
+  <script>
+    // Retrieve the user's name and additional details from local storage and update the DOM
+    var userName = localStorage.getItem('userName');
+    var userEmail = localStorage.getItem('userEmail');
+    var userDOB = localStorage.getItem('userDOB');
+    var userAddress = localStorage.getItem('userAddress');
+    var userBloodGroup = localStorage.getItem('userBloodGroup');
+
+    document.getElementById('userName').innerText = userName;
+    document.getElementById('userEmail').innerText = userEmail;
+    document.getElementById('userDOB').innerText = userDOB;
+    document.getElementById('userAddress').innerText = userAddress;
+    document.getElementById('userBloodGroup').innerText = userBloodGroup;
+
+    // Logout function
+    function handleLogout() {
+      // Implement your logout logic here
+      alert('Logout clicked!');
+    }
+  </script>
+  
+
+</body>
+
+</html>
